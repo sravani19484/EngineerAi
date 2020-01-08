@@ -1,0 +1,59 @@
+<!-- For filtering the paticular data -->
+<div style="text-align: center;" >
+<input type = "text" [(ngModel)]="searchfilter.title" placeholder="Filter the data">
+</div>
+<!-- displaying the data ina table -->
+<div class="container-fluid">
+    <ngx-datatable class="material" [rows]="datalist|filterBy:searchfilter"  [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+        [rowHeight]="50" data-toggle="modal" data-target="#myModal" (activate)="modal($event)">
+
+        <ngx-datatable-column name="title">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.title}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="URL">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.url}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Created_at">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.created_at}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Author">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.author}}
+            </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+</div>
+<!-- For displaying data in modal  -->
+
+<button type="button" class="btn btn-primary">
+    Open modal
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" style="word-wrap: break-word;">
+                <p>{{rawdatajson}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.ngx-datatable .datatable-header .datatable-header-cell .datatable-header-cell-template-wrap .datatable-body-cell{
+color:white;
+border : 1px solid #ccc !important;
+padding-bottom: 10px;
+}
+.ngx-datatable .datatable-body-cell{
+    border-right: 1px solid #ccc;
+    padding:10px
+}
+.ngx-datatable .datatable-row-center{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.visible{
+    border: 1px solid #ccc;
+}
